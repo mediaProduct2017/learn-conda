@@ -22,3 +22,29 @@ The channels can be found in the .condarc file in your home directory.
 
     conda config --remove channels ...
     
+[下载anaconda](https://www.anaconda.com/download)
+
+[Installing on Linux 下载anaconda或者miniconda的安装文件](https://conda.io/docs/user-guide/install/linux.html)
+
+在linux安装
+
+    bash ~/Downloads/安装文件名
+
+显示conda packages
+
+    conda list
+    
+创建conda环境
+
+    conda create -n py3 python=3
+    conda create -n py2 python=2
+    
+在ubuntu中安装git
+
+    apt-get install git
+    sudo apt-get install git
+    
+For Ubuntu, this PPA provides the latest stable upstream Git version
+
+    add-apt-repository ppa: git-core/ppa # apt update; apt install git
+    
