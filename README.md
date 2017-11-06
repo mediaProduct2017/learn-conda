@@ -78,6 +78,10 @@ Linux或者Mac下方法：
     
 如果使用的是gitlab，或者其他使用gitlab的代码管理平台，可以[使用sshkey来免密登录](http://blog.csdn.net/accountwcx/article/details/46822257)
 
+列出与本地git或者某个git项目相关的信息，包括user email, user name, remote.origin.url等
+
+    git config --list
+
 ## jupyter notebook
 
     jypyter notebook list
