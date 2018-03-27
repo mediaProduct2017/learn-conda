@@ -28,6 +28,8 @@ The channels can be found in the .condarc file in your home directory.
 
 [Installing on Linux 下载anaconda或者miniconda的安装文件](https://conda.io/docs/user-guide/install/linux.html)
 
+[Installing on Windows 下载anaconda或者miniconda的安装文件](https://conda.io/docs/user-guide/install/windows.html)
+
 在linux安装
 
     bash ~/Downloads/安装文件名
@@ -41,7 +43,19 @@ The channels can be found in the .condarc file in your home directory.
     conda create -n py3 python=3
     conda create -n py2 python=2
     
-## git    
+## git 
+
+[Git installation instructions](https://www.udacity.com/wiki/ud775/install-git)
+
+使用短行
+
+如果文件包含很长的行，则会降低许多命令行工具（包括 Git）的实用性。 例如，如果使用 diff 比较两个将所有内容都放在同一行上的文件，则 diff 只会显示这两个文件是不同的文件，而无法指出哪里不同。
+
+因此，在编写反思文件或其他纯文本文件时，确保每行长短适中是一种好做法。将行限制为多长是个人喜好问题。 许多开发者都将行限制为不超过 80 到 120 个字符。 有些编辑器能自动插入换行符，但在 Sublime 等其他编辑器中，如果想另起一行，请记得按下 Enter。
+
+查看git版本
+
+    git --version
     
 在ubuntu中安装git
 
@@ -90,7 +104,17 @@ It will display all of the running servers on your machine.
 
 在打开jupyter notebook时，当时在哪个目录下，打开的notebook的根目录就在哪个目录下。
 
+## shell
+
+[Command Line Instructions](https://www.udacity.com/wiki/ud775/command-line-instructions#!#windows-users)
+
+windows: 使用Git Bash运行命令行
+
+If you are on Windows, the native command prompt is a bit different from the ones you’d find on a Unix-based operating system like Ubuntu or Mac.  If you do not already have a more Unix-like command prompt installed, we highly recommend following the instructions on [this page](https://www.udacity.com/wiki/ud775/install-git/install-git-windows) to install Git.  You will need Git later in the course anyway, and it includes a Unix-like bash prompt called Git Bash that you can use to try out the tutorial linked above.
+
 ## pycharm
+
+很好用的python IDE，甚至可以代替Sublime Text、Atom、Notepad++等编辑器
 
 [Installing PyCharm on Linux](https://www.jetbrains.com/help/pycharm/requirements-installation-and-launching.html)
 
@@ -105,5 +129,3 @@ Switch to the bin directory:
 Starting PyCharm on Linux. Run pycharm.sh from the bin subdirectory.  
 
     ./pycharm.sh
-    
-    
