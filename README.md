@@ -111,6 +111,10 @@ It will display all of the running servers on your machine.
 
 在打开jupyter notebook时，当时在哪个目录下，打开的notebook的根目录就在哪个目录下。
 
+## linux安装
+
+在windows中用虚拟机安装linux，可以用vmvare, virtual box或者docker
+
 ## shell
 
 在深度学习时代，需要用到GPU，而要对GPU进行控制，有两个选择，一是安装linux（不能是虚拟机，虚拟机没法很好的控制显卡），二是安装windows，在这种情况下，使用linux虚拟机的用户就需要直接在windows中控制GPU。
