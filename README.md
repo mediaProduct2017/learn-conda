@@ -113,6 +113,10 @@ It will display all of the running servers on your machine.
 
 ## shell
 
+在深度学习时代，需要用到GPU，而要对GPU进行控制，有两个选择，一是安装linux（不能是虚拟机，虚拟机没法很好的控制显卡），二是安装windows，在这种情况下，使用linux虚拟机的用户就需要直接在windows中控制GPU。
+
+在windows中使用shell，有两种比较好的选择，一是使用Git Bash，如下所述，二是使用Anaconda Prompt，一般来说，两个都装，根据所要使用的shell命令的具体情况来选择。
+
 [Command Line Instructions](https://www.udacity.com/wiki/ud775/command-line-instructions#!#windows-users)
 
 windows: 使用Git Bash运行命令行
