@@ -32,6 +32,8 @@ The channels can be found in the .condarc file in your home directory.
 
 在linux安装
 
+用wget或者curl从上面的下载链接中把shell文件下载下来
+
     bash ~/Downloads/安装文件名
 
 显示conda packages
@@ -42,6 +44,11 @@ The channels can be found in the .condarc file in your home directory.
 
     conda create -n py3 python=3
     conda create -n py2 python=2
+    
+## pip
+
+    pip install tensorflow==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
+    pip uninstall tensorflow
     
 ## git 
 
