@@ -119,13 +119,30 @@ It will display all of the running servers on your machine.
 
 在深度学习时代，需要用到GPU，而要对GPU进行控制，有两个选择，一是安装linux（不能是虚拟机，虚拟机没法很好的控制显卡），二是安装windows，在这种情况下，使用linux虚拟机的用户就需要直接在windows中控制GPU。
 
-在windows中使用shell，有两种比较好的选择，一是使用Git Bash，如下所述，二是使用Anaconda Prompt，一般来说，两个都装，根据所要使用的shell命令的具体情况来选择。
+在windows中使用shell，有两种比较好的选择，一是使用Git Bash，如下所述，二是使用Anaconda Prompt，一般来说，两个都装，根据所要使用的shell命令的具体情况来选择。在Git Bash中，mkdir, ls, cd等都能使用。在Anaconda Prompt中，只能使用conda, python, cd等。
 
 [Command Line Instructions](https://www.udacity.com/wiki/ud775/command-line-instructions#!#windows-users)
 
 windows: 使用Git Bash运行命令行
 
 If you are on Windows, the native command prompt is a bit different from the ones you’d find on a Unix-based operating system like Ubuntu or Mac.  If you do not already have a more Unix-like command prompt installed, we highly recommend following the instructions on [this page](https://www.udacity.com/wiki/ud775/install-git/install-git-windows) to install Git.  You will need Git later in the course anyway, and it includes a Unix-like bash prompt called Git Bash that you can use to try out the tutorial linked above.
+
+linux中的查找命令
+
+find，比如以下是在当前目录及其子目录搜索cuda文件或者以cuda开头的文件
+
+    find . -name 'cuda'
+    find . -name 'cuda*'
+
+locate，是find -name的另一种写法，但比后者快得多，它不搜索具体目录，二是搜索一个数据库。这个数据库每天自动更新一次，所以用locate找不到最新变动过的文件。需要使用updatedb手动更新数据库。
+
+找的是文件的开头
+
+whereis，只能用于程序名的搜索。
+
+which，搜索执行的是哪个位置的命令。
+
+[Linux的五个查找命令](http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html)
 
 ## pycharm
 
