@@ -68,8 +68,8 @@ The channels can be found in the .condarc file in your home directory.
     
 ## pip
 
-    pip install tensorflow==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
-    pip uninstall tensorflow
+    pip install tensorflow-gpu==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
+    pip uninstall tensorflow-gpu
     
 ## git 
 
@@ -141,6 +141,8 @@ It will display all of the running servers on your machine.
 在深度学习时代，需要用到GPU，而要对GPU进行控制，有两个选择，一是安装linux（不能是虚拟机，虚拟机没法很好的控制显卡），二是安装windows，在这种情况下，使用linux虚拟机的用户就需要直接在windows中控制GPU。
 
 在windows中使用shell，有两种比较好的选择，一是使用Git Bash，如下所述，二是使用Anaconda Prompt，一般来说，两个都装，根据所要使用的shell命令的具体情况来选择。在Git Bash中，mkdir, ls, cd等都能使用。在Anaconda Prompt中，只能使用conda, python, cd等。Git Bash是bash，所以可以使用大部分bash命令，而Anaconda Prompt并不是bash，所以只能选择性的用一些linux命令。
+
+在windows中，还可以搜索运行，然后在运行中搜索cmd，可以得到一个terminal，用这个terminal进入相应的文件夹（使用cd），然后就可以调用其中的exe文件（直接写文件名执行）。
 
 [Command Line Instructions](https://www.udacity.com/wiki/ud775/command-line-instructions#!#windows-users)
 
