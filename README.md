@@ -50,7 +50,11 @@ The channels can be found in the .condarc file in your home directory.
 
     conda list
     
-创建conda环境
+创建conda环境，不同环境安装不同的某个软件，比如cuda, 不一定是不同的python
+
+    conda create -n env_name
+    
+创建conda环境，不同环境安装不同的python
 
     conda create -n py3 python=3
     conda create -n py2 python=2
