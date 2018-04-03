@@ -55,6 +55,16 @@ The channels can be found in the .condarc file in your home directory.
     conda create -n py3 python=3
     conda create -n py2 python=2
     
+删除conda环境
+
+    conda env remove -n <env_name>
+    conda env remove -n tensorflow
+    
+列出所有的conda环境
+
+    conda env list
+    conda env list --json
+    
 在linux或者mac中，进入虚拟环境可以
 
     source activate py3
@@ -64,7 +74,7 @@ The channels can be found in the .condarc file in your home directory.
 
     activate py3
     
-有时候在windows中，必须从user下activate才能激活，如果进到其他目录，不能激活。
+有时候在windows中，在terminal中deactivate之后，activate命令就不能用了，必须新开一个terminal才能用activate.
     
 ## pip
 
@@ -137,6 +147,8 @@ It will display all of the running servers on your machine.
 在windows中用虚拟机安装linux，可以用vmvare, virtual box或者docker
 
 ## shell
+
+-之后一般是单个字母，--之后一般是英文单词
 
 在深度学习时代，需要用到GPU，而要对GPU进行控制，有两个选择，一是安装linux（不能是虚拟机，虚拟机没法很好的控制显卡），二是安装windows，在这种情况下，使用linux虚拟机的用户就需要直接在windows中控制GPU。
 
