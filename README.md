@@ -69,6 +69,8 @@ The channels can be found in the .condarc file in your home directory.
     conda env list
     conda env list --json
     
+    conda info --env
+    
 在linux或者mac中，进入虚拟环境可以
 
     source activate py3
@@ -79,7 +81,59 @@ The channels can be found in the .condarc file in your home directory.
     activate py3
     
 有时候在windows中，在terminal中deactivate之后，activate命令就不能用了，必须新开一个terminal才能用activate.
+
+conda本质上是管理系统中的环境变量，软件装在哪里其实并不重要。软件装在envs中的好处是当虚拟环境删除时，软件也自然被删掉。另外，python等软件是可以用conda自动安装的，自动安装在envs中，并自动配置所需要的环境变量。
+
+在conda中手动配置某些环境变量
+
+Anaconda can run any bash scripts each time when the environment is activated. Such scripts should be placed in the following path:
+
+    /<path to anaconda>/envs/<env name>/etc/conda/activate.d/
     
+Here is how we can create an executable script that will be executed by Anaconda each time when the environment is activated by user:
+
+    mkdir -p ~/anaconda3/envs/tf_cu90/etc/conda/activate.d
+    touch ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
+    vim ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
+    chmod +x ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
+    
+在具体的虚拟环境中，etc/conda/activate.d这个目录比一定存在，所以需要创建目录
+
+And 2 simple commands that should be in the shell script:
+
+    #!/bin/sh
+    ORIGINAL_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/usr/local/cuda-9.0/extras/CUPTI/lib64:/lib/nccl/cuda-9:$LD_LIBRARY_PATH
+
+We are doing 2 things here:
+
+saving original value of the LD_LIBRARY_PATH (we will need it later)
+
+updating LD_LIBRARY_PATH (so it includes reference to the cuda9.0)
+
+This should be almost enough to make our environment working with CUDA9.0. After re-activating the environment you should be able to use TF 1.5.0 with the CUDA9.0
+
+However, there is something we still need to do. The thing is that if you deactivate the environment, your LD_LIBRARY_PATH value remains
+
+In order to avoid, we do need to set LD_LIBRARY_PATH to the old value that it had before the environment was activated. To do so we need to create another file. Surprise-surprise, since Anaconda has the ability to run any script during the activation phase, it can do the same during the de-activations phase. You just need to put your script here:
+
+    /<path to conda>/envs/<env name>/etc/conda/deactivate.d/
+    
+Let’s do it:
+
+    mkdir -p ~/anaconda3/envs/tf_cu90/etc/conda/deactivate.d
+    touch ~/anaconda3/envs/tf_cu90/etc/conda/deactivate.d/deactivate.sh
+    vim ~/anaconda3/envs/tf_cu90/etc/conda/deactivate.d/deactivate.sh
+    chmod +x ~/anaconda3/envs/tf_cu90/etc/conda/deactivate.d/deactivate.sh
+
+and, as you have probably guessed here is what we’re going to put inside:
+
+    #!/bin/sh
+
+    export LD_LIBRARY_PATH=$ORIGINAL_LD_LIBRARY_PATH
+    unset ORIGINAL_LD_LIBRARY_PATH
+
+
 ## pip
 
     pip install tensorflow-gpu==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
@@ -173,7 +227,7 @@ find，比如以下是在当前目录及其子目录搜索cuda文件或者以cud
     find . -name 'cuda'
     find . -name 'cuda*'
 
-locate，是find -name的另一种写法，但比后者快得多，它不搜索具体目录，二是搜索一个数据库。这个数据库每天自动更新一次，所以用locate找不到最新变动过的文件。需要使用updatedb手动更新数据库。
+locate，是find -name的另一种写法，但比后者快得多，它不搜索具体目录，而是搜索一个数据库。这个数据库每天自动更新一次，所以用locate找不到最新变动过的文件。需要使用updatedb手动更新数据库。
 
 找的是文件的开头
 
