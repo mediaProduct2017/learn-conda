@@ -245,7 +245,7 @@ which，搜索执行的是哪个位置的命令。
 
 [Installing PyCharm on Linux](https://www.jetbrains.com/help/pycharm/requirements-installation-and-launching.html)
 
-Unpack the <pycharm-professional or pycharm-community>-*.tar.gz file to a different folder, The recommended install location according to the filesystem hierarchy standard (FHS) is /opt.
+Unpack the \<pycharm-professional or pycharm-community>-*.tar.gz file to a different folder, The recommended install location according to the filesystem hierarchy standard (FHS) is /opt.
 
     sudo tar xf <pycharm-professional or pycharm-community>-*.tar.gz -C /opt/pycharm
 
@@ -256,3 +256,7 @@ Switch to the bin directory:
 Starting PyCharm on Linux. Run pycharm.sh from the bin subdirectory.  
 
     ./pycharm.sh
+
+## crontab
+
+[crontab](https://github.com/arfu2016/nlp/tree/master/nlp_models/crontab)
