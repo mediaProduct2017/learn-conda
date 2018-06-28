@@ -141,6 +141,8 @@ and, as you have probably guessed here is what we’re going to put inside:
     
 ## git 
 
+[nlp/nlp_models/git](https://github.com/arfu2016/nlp/tree/master/nlp_models/git)
+
 [Git installation instructions](https://www.udacity.com/wiki/ud775/install-git)
 
 使用短行
