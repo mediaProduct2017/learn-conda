@@ -145,6 +145,10 @@ and, as you have probably guessed here is what we’re going to put inside:
 
 [Git installation instructions](https://www.udacity.com/wiki/ud775/install-git)
 
+[git windows](https://gitforwindows.org/)
+
+In mac, git comes with xcode.
+
 使用短行
 
 如果文件包含很长的行，则会降低许多命令行工具（包括 Git）的实用性。 例如，如果使用 diff 比较两个将所有内容都放在同一行上的文件，则 diff 只会显示这两个文件是不同的文件，而无法指出哪里不同。
