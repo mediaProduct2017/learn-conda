@@ -260,7 +260,65 @@ Switch to the bin directory:
 Starting PyCharm on Linux. Run pycharm.sh from the bin subdirectory.  
 
     ./pycharm.sh
+    
+给pycharm设置主题颜色
+
+editor:
+
+settings - Editor - Color Scheme, 可以选择General，也可以选择具体的语言
+
+下面的terminal：
+
+settings - Editor - Color Scheme, 选择Console Font和Console Colors
+
+左边的sidebar和project view:
+
+settings - Appearance and Behavior - Appearance - UI options - Theme.
 
 ## crontab
 
 [crontab](https://github.com/arfu2016/nlp/tree/master/nlp_models/crontab)
+
+## github
+
+修改系统hosts文件的办法，绕过国内dns解析，直接访问GitHub的CDN节点，从而达到加速的目的。不需要科学上网，也不需要海外的服务器辅助。
+
+1 获取GitHub官方CDN地址  
+打开https://www.ipaddress.com/
+
+查询以下三个链接的DNS解析地址     
+1. github.com   
+2. assets-cdn.github.com   
+3. github.global.ssl.fastly.net  
+
+记录下查询到的IP地址。
+
+2018.7.26的记录为：
+
+192.30.253.112 github.com  
+151.101.184.133 assets-cdn.github.com  
+151.101.185.194 github.global.ssl.fastly.net  
+
+2 修改系统Hosts文件
+
+sudo vim /etc/hosts
+
+在末尾添加三行记录并保存。(需管理员权限，注意IP地址与域名间需留有空格)
+
+i ctrl+c ctrl+v esc :wq
+
+3 有可能需要刷新机器上的dns缓存（本次不需要）
+
+Tiger或更低版本 Mac OS：sudo lookupd -flushcache  
+Leopard和Snow Leopard：sudo dscacheutil -flushcache  
+Lion、Mountain Lion和Mavericks：sudo killall -HUP mDNSResponder  
+Yosemite:sudo discoveryutil mdnsflushcache  
+
+这几个命令有可能都要测试下，哪个有效就用哪个。
+
+[加速国内Github访问](https://blog.csdn.net/w958660278/article/details/81161224)
+
+[Mac下修改hosts 解决访问github慢的问题](https://blog.csdn.net/cjopengler/article/details/45603171)
+
+[Mac OS X EI Capitan清空DNS缓存](https://blog.csdn.net/lwjdgl/article/details/50274285)
+
