@@ -275,13 +275,19 @@ editor:
 
 settings - Editor - Color Scheme, 可以选择General，也可以选择具体的语言
 
+一般来说，python的主题颜色一旦确定，其他的主题颜色，比如terminal和SQL的主题颜色也是一样的（可能需要重启pycharm才能看出来）。但是，对于其他的主题，比如terminal或SQL的主题颜色，虽然在大的方面没法不一样，但在各个小的选项上，可以选中做调整，比如改变前景色或者干脆取消前景色（使用默认颜色）。
+
 下面的terminal：
 
 settings - Editor - Color Scheme, 选择Console Font和Console Colors
 
+Console Font可以单独配置，Console Colors虽然有选项，但总是和其他的主题颜色是一致的。
+
 左边的sidebar和project view:
 
 settings - Appearance and Behavior - Appearance - UI options - Theme.
+
+在设置Editor的主题颜色时，pycharm会问你要不要应用于整个pycharm，选择yes的话，整体的风格就统一了，否则的话，左边的sidebar可以是与其他部分不同的颜色。
 
 ## crontab
 
