@@ -21,6 +21,8 @@ The channels can be found in the .condarc file in your home directory.
     conda config --set show_channel_urls yes
     
 [清华的conda下载镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)
+
+[清华的conda源使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
    
 [科大的conda下载镜像](https://mirrors.ustc.edu.cn/anaconda/archive/)
     
@@ -35,6 +37,12 @@ The channels can be found in the .condarc file in your home directory.
     conda config --remove channels ...
     
 [下载anaconda](https://www.anaconda.com/download)
+
+国内的话可以从清华源或者科大源来下载
+
+[从清华源下载anaconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)
+
+[从清华源下载miniconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/)
 
 [Installing on Linux 下载anaconda或者miniconda的安装文件](https://conda.io/docs/user-guide/install/linux.html)
 
