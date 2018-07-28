@@ -289,6 +289,12 @@ settings - Appearance and Behavior - Appearance - UI options - Theme.
 
 在设置Editor的主题颜色时，pycharm会问你要不要应用于整个pycharm，选择yes的话，整体的风格就统一了，否则的话，左边的sidebar可以是与其他部分不同的颜色。
 
+设置interpreter:
+
+给某个项目设置，在打开项目的情况下，选择preferences或者settings，然后选择project interpreter，可以看到是for current project
+
+给新的项目设置，在关闭项目但打开pycharm的情况下，选择preferences或者settings，然后选择project interpreter，可以看到是for new project
+
 ## crontab
 
 [crontab](https://github.com/arfu2016/nlp/tree/master/nlp_models/crontab)
