@@ -214,9 +214,11 @@ It will display all of the running servers on your machine.
 
 在打开jupyter notebook时，当时在哪个目录下，打开的notebook的根目录就在哪个目录下。
 
+最新版的jupyter notebook (jupyter==1.0.0, notebook==5.6.0)比较好用，打开.md文件时，默认edit模式，而不是view模式
+
 ## linux安装
 
-在windows中用虚拟机安装linux，可以用vmvare, virtual box或者docker
+在windows中用虚拟机安装linux，可以用vmvare, virtual box或者docker（docker在linux中是一种很快的存在，但在windows中也是安装在虚拟机之上的）
 
 ## shell
 
@@ -294,6 +296,30 @@ settings - Appearance and Behavior - Appearance - UI options - Theme.
 给某个项目设置，在打开项目的情况下，选择preferences或者settings，然后选择project interpreter，可以看到是for current project
 
 给新的项目设置，在关闭项目但打开pycharm的情况下，选择preferences或者settings，然后选择project interpreter，可以看到是for new project
+
+terminal:
+
+在设置的tools - terminal下有terminal的设置，但没有很大用。pycharm 2017.3在虚拟的conda环境下的project的terminal是默认虚拟环境的，但在pycharm 2018.2的虚拟环境下project的terminal使用的系统的terminal的环境，不是虚拟环境，要进入虚拟环境，还需要source activate。当然，这种不同也不一定是版本造成的，也可能有其他原因。
+
+project interpreter:
+
+设置虚拟环境时，选择add，选中virtualenv或者conda，然后可以建立新的虚拟环境，也可以选择已经存在的虚拟环境。如果选择conda虚拟环境，在看安装的包时，可以选择conda（在左下角偏中间），就能看到conda管理器管理的包，把这个选项点掉，就能看到pip管理的包。
+
+在pycharm 2017.3中，虚拟环境只有virtualenv和conda，在pycharm 2018.2中，虚拟环境还增加了pipenv.
+
+文件头注释的设置：
+
+[Pycharm在创建py文件时,自动添加文件头注释](https://blog.csdn.net/cao812755156/article/details/54619198)
+
+在设置的Editor - File and code templates - python script中，添加注释，比如
+
+    """
+    @Project   : ${PROJECT_NAME}
+    @Module    : ${NAME}.py
+    @Author    : Goulart [goulart@cubee.com]
+    @Created   : ${DATE} ${TIME}
+    @Desc      : 
+    """
 
 ## crontab
 
