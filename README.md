@@ -316,7 +316,7 @@ project interpreter:
     """
     @Project   : ${PROJECT_NAME}
     @Module    : ${NAME}.py
-    @Author    : Goulart [goulart@cubee.com]
+    @Author    : author [someone@email.com]
     @Created   : ${DATE} ${TIME}
     @Desc      : 
     """
