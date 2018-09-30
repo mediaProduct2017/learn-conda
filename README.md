@@ -155,6 +155,32 @@ and, as you have probably guessed here is what we’re going to put inside:
 
 [git windows](https://gitforwindows.org/)
 
+在软件平台中，搜索git，64位电脑可以安装git-2.17.1.2-64-bit.
+
+安装好以后，可以打开git bash，git bash中的默认目录，不同的版本和系统中可能有不同的设置。比如，默认git的安装目录，这时候cd /就到了git的安装目录，也就是根目录放在这里。不过，cd ~就到了用户目录中，这时候pwd就可以看到目录的具体完整的路径，比如/d/Users/specific_user. 如果项目在用户目录下的projects，就可以用cd ~/projects.
+
+用ssh-keygen生成sshkey
+
+    ssh-keygen -t rsa -C "xxxxx@xxxxx.com" -f "d:\id_rsa"
+    
+xxxxx@xxxxx.com是个人邮箱
+
+d:\id_rsa 是生成的sshkey文件
+
+接下来会要求输入私钥密码，如果想留空可以直接按回车(Enter)
+
+最后生成两个文件id_rsa和id_rsa.pub，把这两个文件放到.ssh文件夹下，windows中.ssh文件夹一般在系统盘的用户下(c:\users\)
+
+[初次运行 Git 前的配置](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)
+
+设置git默认的用户名以及用户email
+
+    git config --global user.name "arfu"
+    git config --global user.email arfu.guo@gmail.com
+    
+    git config user.name
+    git config user.email
+
 In mac, git comes with xcode.
 
 使用短行
