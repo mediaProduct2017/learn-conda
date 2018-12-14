@@ -88,6 +88,10 @@ The channels can be found in the .condarc file in your home directory.
 
     activate py3
     
+在某些情况下，windows中进入虚拟环境也可以
+
+    conda activate py3
+    
 有时候在windows中，在terminal中deactivate之后，activate命令就不能用了，必须新开一个terminal才能用activate.
 
 conda本质上是管理系统中的环境变量，软件装在哪里其实并不重要。软件装在envs中的好处是当虚拟环境删除时，软件也自然被删掉。另外，python等软件是可以用conda自动安装的，自动安装在envs中，并自动配置所需要的环境变量。
