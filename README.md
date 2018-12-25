@@ -394,3 +394,46 @@ Yosemite:sudo discoveryutil mdnsflushcache
 
 [Mac OS X EI Capitan清空DNS缓存](https://blog.csdn.net/lwjdgl/article/details/50274285)
 
+## macports
+
+macports可以在mac上使用linux中的一些软件。
+
+[Compiling GCC 8 on macOS Mojave](https://solarianprogrammer.com/2017/05/21/compiling-gcc-macos/)
+
+[How do I install g++ on MacOS X?](https://stackoverflow.com/questions/2122425/how-do-i-install-g-on-macos-x)
+
+[MacPorts Portfiles](https://www.macports.org/ports.php)
+
+[Using the Right Compiler](https://trac.macports.org/wiki/UsingTheRightCompiler)
+
+[C++11 not Working with Macports gcc47](https://stackoverflow.com/questions/11918138/c11-not-working-with-macports-gcc47)
+
+[Update GCC on OSX](https://stackoverflow.com/questions/837992/update-gcc-on-osx)
+
+[Unrecognized Command Line Option '-stdlib=libc++' with MacPorts gcc48](https://stackoverflow.com/questions/24419832/unrecognized-command-line-option-stdlib-libc-with-macports-gcc48)
+
+[unrecognized command line option '-stdlib=libc++' gcc (Homebrew gcc 5.3.0) 5.3.0](https://stackoverflow.com/questions/34654682/unrecognized-command-line-option-stdlib-libc-gcc-homebrew-gcc-5-3-0-5-3-0)
+
+sudo port list | grep gcc | less
+
+sudo port install gcc47
+
+which port  
+/opt/local/bin/port
+
+/opt/local/bin/port install gcc_select
+
+port select --list gcc
+
+port select --list clang
+
+port select --list python
+
+sudo port select --set gcc mp-gcc47
+
+在mac上通过python pip安装fasttext的时候，必须用系统自带的或者官方网站的python版本，anaconda的python版本安装fasttext会出错。可以使用virtualenv来创建虚拟环境。
+
+出错的原因是，fasttext的核心是用c++写的，所以要用到c++的编译器，这里要求特定版本的编译器，就是官方python对应版本的clang编译器。理论上通过macports也能选到合适的clang编译器，但实际上需要一个一个试，很麻烦，不如直接用官方python安装就行。
+
+
+
