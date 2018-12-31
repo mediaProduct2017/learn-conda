@@ -88,6 +88,10 @@ The channels can be found in the .condarc file in your home directory.
 
     activate py3
     
+在某些情况下，windows中进入虚拟环境也可以
+
+    conda activate py3
+    
 有时候在windows中，在terminal中deactivate之后，activate命令就不能用了，必须新开一个terminal才能用activate.
 
 conda本质上是管理系统中的环境变量，软件装在哪里其实并不重要。软件装在envs中的好处是当虚拟环境删除时，软件也自然被删掉。另外，python等软件是可以用conda自动安装的，自动安装在envs中，并自动配置所需要的环境变量。
@@ -154,6 +158,32 @@ and, as you have probably guessed here is what we’re going to put inside:
 [Git installation instructions](https://www.udacity.com/wiki/ud775/install-git)
 
 [git windows](https://gitforwindows.org/)
+
+在软件平台中，搜索git，64位电脑可以安装git-2.17.1.2-64-bit.
+
+安装好以后，可以打开git bash，git bash中的默认目录，不同的版本和系统中可能有不同的设置。比如，默认git的安装目录，这时候cd /就到了git的安装目录，也就是根目录放在这里。不过，cd ~就到了用户目录中，这时候pwd就可以看到目录的具体完整的路径，比如/d/Users/specific_user. 如果项目在用户目录下的projects，就可以用cd ~/projects.
+
+用ssh-keygen生成sshkey
+
+    ssh-keygen -t rsa -C "xxxxx@xxxxx.com" -f "d:\id_rsa"
+    
+xxxxx@xxxxx.com是个人邮箱
+
+d:\id_rsa 是生成的sshkey文件
+
+接下来会要求输入私钥密码，如果想留空可以直接按回车(Enter)
+
+最后生成两个文件id_rsa和id_rsa.pub，把这两个文件放到.ssh文件夹下，windows中.ssh文件夹一般在系统盘的用户下(c:\users\)
+
+[初次运行 Git 前的配置](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)
+
+设置git默认的用户名以及用户email
+
+    git config --global user.name "arfu"
+    git config --global user.email arfu.guo@gmail.com
+    
+    git config user.name
+    git config user.email
 
 In mac, git comes with xcode.
 
@@ -316,7 +346,7 @@ project interpreter:
     """
     @Project   : ${PROJECT_NAME}
     @Module    : ${NAME}.py
-    @Author    : Goulart [goulart@cubee.com]
+    @Author    : author [someone@email.com]
     @Created   : ${DATE} ${TIME}
     @Desc      : 
     """
@@ -374,4 +404,47 @@ Yosemite:sudo discoveryutil mdnsflushcache
 [Mac下修改hosts 解决访问github慢的问题](https://blog.csdn.net/cjopengler/article/details/45603171)
 
 [Mac OS X EI Capitan清空DNS缓存](https://blog.csdn.net/lwjdgl/article/details/50274285)
+
+## macports
+
+macports可以在mac上使用linux中的一些软件。
+
+[Compiling GCC 8 on macOS Mojave](https://solarianprogrammer.com/2017/05/21/compiling-gcc-macos/)
+
+[How do I install g++ on MacOS X?](https://stackoverflow.com/questions/2122425/how-do-i-install-g-on-macos-x)
+
+[MacPorts Portfiles](https://www.macports.org/ports.php)
+
+[Using the Right Compiler](https://trac.macports.org/wiki/UsingTheRightCompiler)
+
+[C++11 not Working with Macports gcc47](https://stackoverflow.com/questions/11918138/c11-not-working-with-macports-gcc47)
+
+[Update GCC on OSX](https://stackoverflow.com/questions/837992/update-gcc-on-osx)
+
+[Unrecognized Command Line Option '-stdlib=libc++' with MacPorts gcc48](https://stackoverflow.com/questions/24419832/unrecognized-command-line-option-stdlib-libc-with-macports-gcc48)
+
+[unrecognized command line option '-stdlib=libc++' gcc (Homebrew gcc 5.3.0) 5.3.0](https://stackoverflow.com/questions/34654682/unrecognized-command-line-option-stdlib-libc-gcc-homebrew-gcc-5-3-0-5-3-0)
+
+sudo port list | grep gcc | less
+
+sudo port install gcc47
+
+which port  
+/opt/local/bin/port
+
+/opt/local/bin/port install gcc_select
+
+port select --list gcc
+
+port select --list clang
+
+port select --list python
+
+sudo port select --set gcc mp-gcc47
+
+在mac上通过python pip安装fasttext的时候，必须用系统自带的或者官方网站的python版本，anaconda的python版本安装fasttext会出错。可以使用virtualenv来创建虚拟环境。
+
+出错的原因是，fasttext的核心是用c++写的，所以要用到c++的编译器，这里要求特定版本的编译器，就是官方python对应版本的clang编译器。理论上通过macports也能选到合适的clang编译器，但实际上需要一个一个试，很麻烦，不如直接用官方python安装就行。
+
+
 
