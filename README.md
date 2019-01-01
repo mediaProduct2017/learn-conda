@@ -351,7 +351,7 @@ project interpreter:
     @Desc      : 
     """
 
-在设置的Editor - Code Style中，可以设置hard wrap at，一般设成80或者120；也可以设置line seperator，特别是在windows系统中，要设置成LF。
+在设置的Editor - Code Style中，可以设置hard wrap at，一般设成79或者120；也可以设置line seperator，特别是在windows系统中，要设置成LF。
 
 在设置的Editor - File Encoding中，全部设成utf-8，windows的话要特别注意
 
