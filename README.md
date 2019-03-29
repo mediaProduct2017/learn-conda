@@ -281,6 +281,10 @@ whereis，只能用于程序名的搜索。
 
 which，搜索执行的是哪个位置的命令。
 
+    which python
+    which python -a
+    which python --all
+
 [Linux的五个查找命令](http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html)
 
 ## pycharm
