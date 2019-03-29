@@ -279,6 +279,8 @@ locate，是find -name的另一种写法，但比后者快得多，它不搜索�
 
 whereis，只能用于程序名的搜索。
 
+    whereis python
+
 which，搜索执行的是哪个位置的命令。
 
     which python
@@ -286,6 +288,12 @@ which，搜索执行的是哪个位置的命令。
     which python --all
 
 [Linux的五个查找命令](http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html)
+
+查看python安装位置：
+
+运行python，在python中import sys，然后print(sys.path)
+
+如果python的安装目录是/usr/local/python3，那么一般来说，包安装在/usr/local/python3/lib/python3.6/site-packages，对应的pip一般装在/usr/local/python3/bin当中
 
 ## pycharm
 
