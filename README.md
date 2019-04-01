@@ -151,6 +151,41 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip install tensorflow-gpu==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
     pip uninstall tensorflow-gpu
     
+    pip config [<file-option>] list
+    # 列出pip配置，主要是pip的源
+    pip config [<file-option>] [--editor <editor-path>] edit
+
+    pip config [<file-option>] get name  
+    pip config [<file-option>] set name value  
+    pip config [<file-option>] unset name  
+    
+    
+## virtualenv
+
+    pip install virtualenv
+    
+    virtualenv /path/to/ENV
+    
+    source /path/to/ENV/bin/activate
+    
+    deactivate
+    
+On Windows, the equivalent activate script is in the Scripts folder:
+
+    \path\to\env\Scripts\activate
+    
+And type deactivate to undo the changes.
+
+    pip install virtualenvwrapper
+    
+之后，查看virtualenv虚拟环境
+
+    lsvirtualenv -l
+
+## Pipenv
+
+最新的一款管理python虚拟环境的工具
+    
 ## git 
 
 [nlp/nlp_models/git](https://github.com/arfu2016/nlp/tree/master/nlp_models/git)
