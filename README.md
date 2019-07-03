@@ -210,6 +210,12 @@ d:\id_rsa 是生成的sshkey文件
 
 最后生成两个文件id_rsa和id_rsa.pub，把这两个文件放到.ssh文件夹下，windows中.ssh文件夹一般在系统盘的用户下(c:\users\)
 
+在linux中是这样：
+
+    ssh-keygen -t rsa -C "xxxxx@xxxxx.com" -f "/usr/ssd0/name/.ssh/id_rsa"
+    
+可以用vim打开.ssh文件夹中的id_rsa.pub，把文本添加到gitlab网页端的公钥列表中。
+
 [初次运行 Git 前的配置](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)
 
 设置git默认的用户名以及用户email
