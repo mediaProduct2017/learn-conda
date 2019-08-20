@@ -159,6 +159,8 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip config [<file-option>] set name value  
     pip config [<file-option>] unset name  
     
+    python3 -m pip install -r requirements.txt
+    
     
 ## virtualenv
 
