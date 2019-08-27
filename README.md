@@ -31,6 +31,10 @@ The channels can be found in the .condarc file in your home directory.
 使用特定的channel安装
 
     conda install -c defaults
+    
+conda安装某个包或软件
+
+    conda install cairo
 
 删除特定的channel
 
@@ -61,6 +65,10 @@ The channels can be found in the .condarc file in your home directory.
 创建conda环境，不同环境安装不同的某个软件，比如cuda, 不一定是不同的python
 
     conda create -n env_name
+
+根据.yml文件创建环境
+
+conda env create -f environment.yml
     
 创建conda环境，不同环境安装不同的python
 
@@ -83,6 +91,10 @@ The channels can be found in the .condarc file in your home directory.
 
     source activate py3
     conda activate py3
+    
+退出虚拟环境可以
+
+    source deactivate
     
 在windows中，进入虚拟环境可以
 
