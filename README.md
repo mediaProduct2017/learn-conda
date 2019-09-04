@@ -32,7 +32,7 @@ The channels can be found in the .condarc file in your home directory.
 
     conda install -c defaults
     
-conda安装某个包或软件
+conda安装某个包或软件（可能是python包，也可能是其他类型的软件；版本有可能偏老，或者不太合适，对mac来说，有可能不如用brew安装的版本）
 
     conda install cairo
 
