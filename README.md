@@ -12,18 +12,18 @@ conda可以安装不同版本的python，同理也可以安装不同版本的其
 
     conda info
     conda config --get channels
-    
+
 The channels can be found in the .condarc file in your home directory.    
 
 添加conda channel
 
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
     conda config --set show_channel_urls yes
-    
+
 [清华的conda下载镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)
 
 [清华的conda源使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
-   
+
 [科大的conda下载镜像](https://mirrors.ustc.edu.cn/anaconda/archive/)
     
 [科大Anaconda 源使用帮助](https://mirrors.ustc.edu.cn/help/anaconda.html)
@@ -35,7 +35,7 @@ The channels can be found in the .condarc file in your home directory.
 删除特定的channel
 
     conda config --remove channels ...
-    
+
 [下载anaconda](https://www.anaconda.com/download)
 
 国内的话可以从清华源或者科大源来下载
@@ -57,41 +57,41 @@ The channels can be found in the .condarc file in your home directory.
 显示conda packages
 
     conda list
-    
+
 创建conda环境，不同环境安装不同的某个软件，比如cuda, 不一定是不同的python
 
     conda create -n env_name
-    
+
 创建conda环境，不同环境安装不同的python
 
     conda create -n py3 python=3
     conda create -n py2 python=2
-    
+
 删除conda环境
 
     conda env remove -n <env_name>
     conda env remove -n tensorflow
-    
+
 列出所有的conda环境
 
     conda env list
     conda env list --json
     
     conda info --env
-    
+
 在linux或者mac中，进入虚拟环境可以
 
     source activate py3
     conda activate py3
-    
+
 在windows中，进入虚拟环境可以
 
     activate py3
-    
+
 在某些情况下，windows中进入虚拟环境也可以
 
     conda activate py3
-    
+
 有时候在windows中，在terminal中deactivate之后，activate命令就不能用了，必须新开一个terminal才能用activate.
 
 conda本质上是管理系统中的环境变量，软件装在哪里其实并不重要。软件装在envs中的好处是当虚拟环境删除时，软件也自然被删掉。另外，python等软件是可以用conda自动安装的，自动安装在envs中，并自动配置所需要的环境变量。
@@ -101,14 +101,14 @@ conda本质上是管理系统中的环境变量，软件装在哪里其实并不
 Anaconda can run any bash scripts each time when the environment is activated. Such scripts should be placed in the following path:
 
     /<path to anaconda>/envs/<env name>/etc/conda/activate.d/
-    
+
 Here is how we can create an executable script that will be executed by Anaconda each time when the environment is activated by user:
 
     mkdir -p ~/anaconda3/envs/tf_cu90/etc/conda/activate.d
     touch ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
     vim ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
     chmod +x ~/anaconda3/envs/tf_cu90/etc/conda/activate.d/activate.sh
-    
+
 在具体的虚拟环境中，etc/conda/activate.d这个目录比一定存在，所以需要创建目录
 
 And 2 simple commands that should be in the shell script:
@@ -130,7 +130,7 @@ However, there is something we still need to do. The thing is that if you deacti
 In order to avoid, we do need to set LD_LIBRARY_PATH to the old value that it had before the environment was activated. To do so we need to create another file. Surprise-surprise, since Anaconda has the ability to run any script during the activation phase, it can do the same during the de-activations phase. You just need to put your script here:
 
     /<path to conda>/envs/<env name>/etc/conda/deactivate.d/
-    
+
 Let’s do it:
 
     mkdir -p ~/anaconda3/envs/tf_cu90/etc/conda/deactivate.d
@@ -141,7 +141,7 @@ Let’s do it:
 and, as you have probably guessed here is what we’re going to put inside:
 
     #!/bin/sh
-
+    
     export LD_LIBRARY_PATH=$ORIGINAL_LD_LIBRARY_PATH
     unset ORIGINAL_LD_LIBRARY_PATH
 
@@ -151,15 +151,22 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip install tensorflow-gpu==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
     pip uninstall tensorflow-gpu
     
+    pip install -e
+    pip install --editable
+    # 包的可编辑模式，一般用于本地开发
+    
     pip config [<file-option>] list
     # 列出pip配置，主要是pip的源
     pip config [<file-option>] [--editor <editor-path>] edit
-
+    
     pip config [<file-option>] get name  
     pip config [<file-option>] set name value  
     pip config [<file-option>] unset name  
-    
-    
+
+[When would the -e, --editable option be useful with pip install?](https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install)
+
+
+
 ## virtualenv
 
     pip install virtualenv
@@ -169,15 +176,15 @@ and, as you have probably guessed here is what we’re going to put inside:
     source /path/to/ENV/bin/activate
     
     deactivate
-    
+
 On Windows, the equivalent activate script is in the Scripts folder:
 
     \path\to\env\Scripts\activate
-    
+
 And type deactivate to undo the changes.
 
     pip install virtualenvwrapper
-    
+
 之后，查看virtualenv虚拟环境
 
     lsvirtualenv -l
@@ -201,7 +208,7 @@ And type deactivate to undo the changes.
 用ssh-keygen生成sshkey
 
     ssh-keygen -t rsa -C "xxxxx@xxxxx.com" -f "d:\id_rsa"
-    
+
 xxxxx@xxxxx.com是个人邮箱
 
 d:\id_rsa 是生成的sshkey文件
@@ -213,7 +220,7 @@ d:\id_rsa 是生成的sshkey文件
 在linux中是这样：
 
     ssh-keygen -t rsa -C "xxxxx@xxxxx.com" -f "/usr/ssd0/name/.ssh/id_rsa"
-    
+
 可以用vim打开.ssh文件夹中的id_rsa.pub，把文本添加到gitlab网页端的公钥列表中。
 
 [初次运行 Git 前的配置](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)
@@ -237,16 +244,16 @@ In mac, git comes with xcode.
 查看git版本
 
     git --version
-    
+
 在ubuntu中安装git
 
     apt-get install git
     sudo apt-get install git
-    
+
 For Ubuntu, this PPA provides the latest stable upstream Git version
 
     add-apt-repository ppa: git-core/ppa # apt update; apt install git
-  
+
 [git免密登录官方文档](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8#_credential_caching)
 
 “store” 模式会将凭证用明文的形式存放在磁盘中，并且永不过期。 这意味着除非你修改了你在 Git 服务器上的密码，否则你永远不需要再次输入你的凭证信息。 这种方式的缺点是你的密码是用明文的方式存放在你的 home 目录下。
@@ -265,12 +272,12 @@ Linux或者Mac下方法：
 在终端下输入：
 
     git config --global credential.helper store
-    
+
 打开~/.gitconfig文件，会发现多了一项:
 
     [credential]
     helper = store
-    
+
 如果使用的是gitlab，或者其他使用gitlab的代码管理平台，可以[使用sshkey来免密登录](http://blog.csdn.net/accountwcx/article/details/46822257)
 
 列出与本地git或者某个git项目相关的信息，包括user email, user name, remote.origin.url等
@@ -349,11 +356,11 @@ Unpack the \<pycharm-professional or pycharm-community>-*.tar.gz file to a diffe
 Switch to the bin directory:
 
     cd <new archive folder>/<pycharm-professional or pycharm-community>-*/bin
-    
+
 Starting PyCharm on Linux. Run pycharm.sh from the bin subdirectory.  
 
     ./pycharm.sh
-    
+
 给pycharm设置主题颜色
 
 editor:
