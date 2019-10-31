@@ -32,6 +32,10 @@ The channels can be found in the .condarc file in your home directory.
 
     conda install -c defaults
 
+conda安装某个包或软件（可能是python包，也可能是其他类型的软件；版本有可能偏老，或者不太合适，对mac来说，有可能不如用brew安装的版本）
+
+    conda install cairo
+
 删除特定的channel
 
     conda config --remove channels ...
@@ -62,6 +66,13 @@ The channels can be found in the .condarc file in your home directory.
 
     conda create -n env_name
 
+
+
+根据.yml文件创建环境
+
+conda env create -f environment.yml
+    
+
 创建conda环境，不同环境安装不同的python
 
     conda create -n py3 python=3
@@ -83,6 +94,11 @@ The channels can be found in the .condarc file in your home directory.
 
     source activate py3
     conda activate py3
+
+退出虚拟环境可以
+
+    source deactivate
+
 
 在windows中，进入虚拟环境可以
 
@@ -162,8 +178,10 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip config [<file-option>] get name  
     pip config [<file-option>] set name value  
     pip config [<file-option>] unset name  
-
 [When would the -e, --editable option be useful with pip install?](https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install)
+    
+
+    python3 -m pip install -r requirements.txt
 
 
 
