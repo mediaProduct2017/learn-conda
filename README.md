@@ -167,7 +167,8 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip install tensorflow-gpu==1.0 -i https://pypi.mirrors.ustc.edu.cn/simple
     pip uninstall tensorflow-gpu
     
-    pip install --upgrade tensorflow-gpu==1.3.1
+    pip install --upgrade tensorflow-gpu==1.13.1
+    -i https://pypi.tuna.tsinghua.edu.cn/simple
     
     pip install -e
     pip install --editable
