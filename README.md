@@ -182,9 +182,24 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip config [<file-option>] set name value  
     pip config [<file-option>] unset name  
 [When would the -e, --editable option be useful with pip install?](https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install)
-    
 
     python3 -m pip install -r requirements.txt
+
+使用pip install --editable来安装可修改的keras
+
+克隆repository或者从github上找到相应release下载zip并解压，最好就放置在项目的目录中（其实位置不重要）
+
+然后，`cd` 到 Keras 目录并且运行安装命令
+
+```
+pip install --editable ./
+
+# 或者
+python setup.py develop
+
+# 如果没有修改的打算
+python setup.py install
+```
 
 
 
