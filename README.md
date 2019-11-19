@@ -68,7 +68,7 @@ conda安装某个包或软件（可能是python包，也可能是其他类型的
 
 
 
-根据.yml文件创建环境
+根据.yml文件创建环境（比如在github中manim的安装中）
 
 conda env create -f environment.yml
     
@@ -170,10 +170,6 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip install --upgrade tensorflow-gpu==1.13.1
     -i https://pypi.tuna.tsinghua.edu.cn/simple
     
-    pip install -e
-    pip install --editable
-    # 包的可编辑模式，一般用于本地开发
-    
     pip config [<file-option>] list
     # 列出pip配置，主要是pip的源
     pip config [<file-option>] [--editor <editor-path>] edit
@@ -181,11 +177,16 @@ and, as you have probably guessed here is what we’re going to put inside:
     pip config [<file-option>] get name  
     pip config [<file-option>] set name value  
     pip config [<file-option>] unset name  
+    
+    python3 -m pip install -r requirements.txt
+    # 表示使用python3下的pip包来运行，这里提供了直接运行python包的方法
 [When would the -e, --editable option be useful with pip install?](https://stackoverflow.com/questions/35064426/when-would-the-e-editable-option-be-useful-with-pip-install)
 
-    python3 -m pip install -r requirements.txt
+    pip install -e
+    pip install --editable
+    # 包的可编辑模式，一般用于本地开发
 
-使用pip install --editable来安装可修改的keras
+以下的例子是为了展示：使用pip install --editable来安装可修改的keras
 
 克隆repository或者从github上找到相应release下载zip并解压，最好就放置在项目的目录中（其实位置不重要）
 
